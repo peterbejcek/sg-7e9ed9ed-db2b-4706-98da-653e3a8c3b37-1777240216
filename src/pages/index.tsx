@@ -15,8 +15,8 @@ const translations = {
       contact: "Kontakt",
     },
     hero: {
-      title: "Spoľahlivé letiskové transfery",
-      subtitle: "Bezpečná a pohodlná preprava na letisko Košice a Budapešť",
+      title: "Spoľahlivá doprava na letisko bez stresu.",
+      subtitle: "Profesionálny transfer z Košíc na letiská Košice a Budapešť. Jazdite s Najpax Taxi a E-taxi.",
       availability: "Dostupní 24/7 • Okamžité potvrdenie",
       cta: "Rezervovať transfer",
       phone: "Zavolať teraz",
@@ -53,7 +53,7 @@ const translations = {
       },
       bud: {
         title: "Košice ↔ Letisko Budapešť (BUD)",
-        desc: "Pohodlný medzinárodný transfer",
+        desc: "Transfer na letisko Budapešť už od 120€. Komfortné vozidlá a skúsení vodiči.",
         duration: "3-3.5 hod",
       },
       viewAll: "Zobraziť všetky trasy",
@@ -66,6 +66,13 @@ const translations = {
     footer: {
       tagline: "Váš spoľahlivý partner pre letiskové transfery v Košiciach",
       rights: "Všetky práva vyhradené",
+      contact: {
+        title: "Kontakt",
+        phone: "+421 XXX XXX XXX",
+        email: "info@letiskokosice.taxi",
+      },
+      gdpr: "Ochrana osobných údajov (GDPR)",
+      partners: "Partnerské služby",
     },
   },
   en: {
@@ -76,8 +83,8 @@ const translations = {
       contact: "Contact",
     },
     hero: {
-      title: "Reliable Airport Transfers",
-      subtitle: "Safe and comfortable transportation to Kosice and Budapest airports",
+      title: "Reliable Stress-Free Airport Transportation.",
+      subtitle: "Professional transfers from Kosice to Kosice and Budapest airports. Travel with Najpax Taxi and E-taxi.",
       availability: "Available 24/7 • Instant Confirmation",
       cta: "Book Transfer",
       phone: "Call Now",
@@ -114,7 +121,7 @@ const translations = {
       },
       bud: {
         title: "Kosice ↔ Budapest Airport (BUD)",
-        desc: "Comfortable international transfer",
+        desc: "Transfer to Budapest Airport from €120. Comfortable vehicles and experienced drivers.",
         duration: "3-3.5 hrs",
       },
       viewAll: "View All Routes",
@@ -127,6 +134,13 @@ const translations = {
     footer: {
       tagline: "Your reliable partner for airport transfers in Kosice",
       rights: "All rights reserved",
+      contact: {
+        title: "Contact",
+        phone: "+421 XXX XXX XXX",
+        email: "info@letiskokosice.taxi",
+      },
+      gdpr: "Privacy Policy (GDPR)",
+      partners: "Partner Services",
     },
   },
 };
@@ -368,18 +382,67 @@ export default function Home() {
         {/* Footer */}
         <footer className="border-t border-border py-12 bg-muted">
           <div className="container">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
-                  <MapPin className="h-5 w-5 text-primary-foreground" />
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              {/* Brand */}
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center">
+                    <MapPin className="h-5 w-5 text-primary-foreground" />
+                  </div>
+                  <span className="font-heading font-bold text-xl text-primary">letiskokosice.taxi</span>
                 </div>
-                <span className="font-heading font-bold text-xl text-primary">letiskokosice.taxi</span>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {t.footer.tagline}
+                </p>
               </div>
-              
-              <div className="text-center md:text-left">
-                <p className="text-sm text-muted-foreground mb-1">{t.footer.tagline}</p>
-                <p className="text-sm text-muted-foreground">© 2026 letiskokosice.taxi. {t.footer.rights}.</p>
+
+              {/* Contact */}
+              <div>
+                <h3 className="font-heading font-semibold text-base mb-4">{t.footer.contact.title}</h3>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <Phone className="h-4 w-4" />
+                    <a href="tel:+421XXXXXXXXX" className="hover:text-foreground transition-colors">
+                      {t.footer.contact.phone}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <a href="mailto:info@letiskokosice.taxi" className="hover:text-foreground transition-colors">
+                      {t.footer.contact.email}
+                    </a>
+                  </div>
+                </div>
               </div>
+
+              {/* Partners */}
+              <div>
+                <h3 className="font-heading font-semibold text-base mb-4">{t.footer.partners}</h3>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Star className="h-3.5 w-3.5 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium">Najpax Taxi</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
+                      <Star className="h-3.5 w-3.5 text-primary" />
+                    </div>
+                    <span className="text-sm font-medium">E-taxi Košice</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Bar */}
+            <div className="pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+              <p>© 2026 letiskokosice.taxi. {t.footer.rights}.</p>
+              <a href="#gdpr" className="hover:text-foreground transition-colors">
+                {t.footer.gdpr}
+              </a>
             </div>
           </div>
         </footer>
