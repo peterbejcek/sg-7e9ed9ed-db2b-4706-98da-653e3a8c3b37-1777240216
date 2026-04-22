@@ -198,7 +198,7 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-secondary py-20 md:py-32">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070')] bg-cover bg-center opacity-10" />
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070')] bg-cover bg-center opacity-10" />
           <div className="container relative">
             <div className="mx-auto max-w-3xl text-center">
               <Badge className="mb-6 bg-accent text-accent-foreground hover:bg-accent/90" variant="secondary">
@@ -223,6 +223,34 @@ export default function Home() {
                   <Phone className="mr-2 h-5 w-5" />
                   {t.hero.phone}
                 </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Vehicle Showcase */}
+          <div className="container relative mt-16">
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <div className="relative h-64 rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
+                <img 
+                  src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070" 
+                  alt="Mercedes luxury vehicle"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <p className="text-white font-semibold">Mercedes-Benz E-Class</p>
+                  <p className="text-white/80 text-sm">Premium comfort vehicles</p>
+                </div>
+              </div>
+              <div className="relative h-64 rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
+                <img 
+                  src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=2070" 
+                  alt="Skoda modern vehicle"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <p className="text-white font-semibold">Škoda Superb</p>
+                  <p className="text-white/80 text-sm">Spacious family vehicles</p>
+                </div>
               </div>
             </div>
           </div>
@@ -317,13 +345,22 @@ export default function Home() {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg">
+              <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070" 
+                    alt="Kosice Airport"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <Badge variant="secondary" className="bg-white/95 text-primary backdrop-blur">
+                      {t.routes.ksc.duration}
+                    </Badge>
+                  </div>
+                </div>
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
                     <MapPin className="h-8 w-8 text-primary" />
-                    <Badge variant="secondary" className="bg-accent/10 text-accent-foreground">
-                      {t.routes.ksc.duration}
-                    </Badge>
                   </div>
                   <CardTitle className="font-heading text-xl">{t.routes.ksc.title}</CardTitle>
                   <CardDescription className="text-base">{t.routes.ksc.desc}</CardDescription>
@@ -336,13 +373,22 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-secondary/20 hover:border-secondary/40 transition-all hover:shadow-lg">
+              <Card className="border-2 border-secondary/20 hover:border-secondary/40 transition-all hover:shadow-lg overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074" 
+                    alt="Budapest Airport"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <Badge variant="secondary" className="bg-white/95 text-secondary backdrop-blur">
+                      {t.routes.bud.duration}
+                    </Badge>
+                  </div>
+                </div>
                 <CardHeader>
                   <div className="flex items-start justify-between mb-2">
                     <MapPin className="h-8 w-8 text-secondary" />
-                    <Badge variant="secondary" className="bg-accent/10 text-accent-foreground">
-                      {t.routes.bud.duration}
-                    </Badge>
                   </div>
                   <CardTitle className="font-heading text-xl">{t.routes.bud.title}</CardTitle>
                   <CardDescription className="text-base">{t.routes.bud.desc}</CardDescription>
