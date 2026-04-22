@@ -1,5 +1,6 @@
 import { SEO } from "@/components/SEO";
 import { LanguageSwitch, useLocale } from "@/components/LanguageSwitch";
+import { BookingForm } from "@/components/BookingForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -342,6 +343,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Booking Form */}
+        <BookingForm locale={locale} />
 
         {/* Final CTA */}
         <section className="py-20 bg-gradient-to-r from-primary to-secondary">
