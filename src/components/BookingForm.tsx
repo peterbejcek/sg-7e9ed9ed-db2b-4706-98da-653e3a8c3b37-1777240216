@@ -45,6 +45,9 @@ const translations = {
     submit: "Objednať transfer",
     submitQuote: "Požiadať o cenovú ponuku",
     contactDetails: "Kontaktné údaje",
+    sending: "Odosielam...",
+    success: "Ďakujeme! Vaša objednávka bola odoslaná. Hneď vás budeme kontaktovať.",
+    error: "Nastala chyba pri odosielaní. Skúste to prosím znova alebo nás kontaktujte telefonicky.",
   },
   en: {
     title: "Book Your Transfer",
@@ -73,6 +76,9 @@ const translations = {
     submit: "Order Transfer",
     submitQuote: "Request Quote",
     contactDetails: "Contact Details",
+    sending: "Sending...",
+    success: "Thank you! Your booking has been sent. We will contact you shortly.",
+    error: "An error occurred while sending. Please try again or contact us by phone.",
   },
 };
 
@@ -80,6 +86,8 @@ export function BookingForm({ locale }: BookingFormProps) {
   const t = translations[locale];
   const [date, setDate] = useState<Date>();
   const [isQuoteOnly, setIsQuoteOnly] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [formData, setFormData] = useState({
     pickupLocation: "",
     destination: "",
@@ -93,10 +101,50 @@ export function BookingForm({ locale }: BookingFormProps) {
     note: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", { ...formData, date, isQuoteOnly });
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/send-booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          date: date ? format(date, "PPP") : "",
+          isQuoteOnly,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        // Reset form
+        setFormData({
+          pickupLocation: "",
+          destination: "",
+          time: "",
+          passengers: "",
+          package: "",
+          name: "",
+          phone: "",
+          email: "",
+          flightNumber: "",
+          note: "",
+        });
+        setDate(undefined);
+        setIsQuoteOnly(false);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -115,6 +163,18 @@ export function BookingForm({ locale }: BookingFormProps) {
               {t.subtitle}
             </p>
           </div>
+
+          {submitStatus === "success" && (
+            <div className="mb-6 p-4 bg-green-50 border-2 border-green-200 rounded-lg text-green-800">
+              {t.success}
+            </div>
+          )}
+
+          {submitStatus === "error" && (
+            <div className="mb-6 p-4 bg-red-50 border-2 border-red-200 rounded-lg text-red-800">
+              {t.error}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg border-2 border-border p-8 space-y-6">
             {/* Pick-up and Destination */}
@@ -322,10 +382,11 @@ export function BookingForm({ locale }: BookingFormProps) {
             <Button
               type="submit"
               size="lg"
+              disabled={isSubmitting}
               className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold"
             >
               <Send className="mr-2 h-5 w-5" />
-              {isQuoteOnly ? t.submitQuote : t.submit}
+              {isSubmitting ? t.sending : (isQuoteOnly ? t.submitQuote : t.submit)}
             </Button>
           </form>
         </div>
