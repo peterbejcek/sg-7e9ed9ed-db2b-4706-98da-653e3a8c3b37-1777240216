@@ -275,7 +275,7 @@ export default function Home() {
 
           {/* Vehicle Showcase */}
           <div className="container relative mt-16">
-            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <div className="relative h-64 rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
                 <img 
                   src="/0025BE44-15A2-4EA2-BC76-4C5387C2D68A.png" 
@@ -298,6 +298,22 @@ export default function Home() {
                   <p className="text-white/80 text-sm">Ekologické tiché komfortne</p>
                 </div>
               </div>
+              <div className="relative h-64 rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
+                <img 
+                  src="/19CE48D0-E401-4811-BACC-3B72386A0A23.png" 
+                  alt="Toyota Corolla Hybrid"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+                  <p className="text-white font-semibold">Toyota Corolla Hybrid</p>
+                  <p className="text-white/80 text-sm">Priestranné tiché ekologické</p>
+                </div>
+              </div>
+            </div>
+            <div className="text-center mt-6">
+              <p className="text-white/90 text-lg font-medium">
+                Celkovo 14 vozidiel, všetky čisté, klimatizované a udržiavané v dobrom technickom stave
+              </p>
             </div>
           </div>
         </section>
@@ -434,7 +450,7 @@ export default function Home() {
               <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1583886266792-87c9b7f8e25d?q=80&w=2070" 
+                    src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070" 
                     alt="Kosice Airport"
                     className="w-full h-full object-cover"
                   />
