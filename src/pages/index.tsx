@@ -275,19 +275,29 @@ export default function Home() {
             </div>
             
             <div className="flex flex-wrap justify-center items-center gap-12 md:gap-16">
-              <div className="flex items-center gap-3 bg-white px-8 py-6 rounded-lg shadow-sm">
+              <a 
+                href="https://www.najpaxtaxikosice.sk/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-white px-8 py-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              >
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <Star className="h-6 w-6 text-primary" />
                 </div>
                 <span className="font-heading font-bold text-2xl text-primary">Najpax Taxi</span>
-              </div>
+              </a>
               
-              <div className="flex items-center gap-3 bg-white px-8 py-6 rounded-lg shadow-sm">
+              <a 
+                href="https://e-taxike.sk/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 bg-white px-8 py-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+              >
                 <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                   <Star className="h-6 w-6 text-primary" />
                 </div>
                 <span className="font-heading font-bold text-2xl text-primary">E-taxi Košice</span>
-              </div>
+              </a>
             </div>
           </div>
         </section>
@@ -473,18 +483,28 @@ export default function Home() {
               <div>
                 <h3 className="font-heading font-semibold text-base mb-4">{t.footer.partners}</h3>
                 <div className="space-y-3">
-                  <div className="flex items-center gap-2">
+                  <a 
+                    href="https://www.najpaxtaxikosice.sk/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:text-foreground transition-colors"
+                  >
                     <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
                       <Star className="h-3.5 w-3.5 text-primary" />
                     </div>
                     <span className="text-sm font-medium">Najpax Taxi</span>
-                  </div>
-                  <div className="flex items-center gap-2">
+                  </a>
+                  <a 
+                    href="https://e-taxike.sk/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 hover:text-foreground transition-colors"
+                  >
                     <div className="h-6 w-6 rounded-full bg-primary/10 flex items-center justify-center">
                       <Star className="h-3.5 w-3.5 text-primary" />
                     </div>
                     <span className="text-sm font-medium">E-taxi Košice</span>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
