@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Clock, CheckCircle2, Users, Baby, MapPin, ArrowRight, Star, CreditCard, FileText, Car } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const translations = {
   sk: {
@@ -77,6 +78,44 @@ const translations = {
         duration: "4-4.5 hod",
       },
       viewAll: "Zobraziť všetky trasy",
+    },
+    faq: {
+      title: "Často kladené otázky",
+      subtitle: "Odpovede na najčastejšie otázky o našich službách",
+      items: [
+        {
+          q: "Ako si môžem rezervovať transfer?",
+          a: "Transfer si môžete rezervovať telefonicky na +421 902 266 044, emailom na info@letiskokosice.taxi, alebo cez rezervačný formulár na tejto stránke. Po prijatí rezervácie vám pošleme potvrdenie.",
+        },
+        {
+          q: "Aké sú platobné možnosti?",
+          a: "Platbu môžete uskutočniť v hotovosti alebo kartou priamo vo vozidle. Pre firemných zákazníkov ponúkame platbu na faktúru pri hromadných objednávkach.",
+        },
+        {
+          q: "Čo zahŕňa cena transferu?",
+          a: "Cena zahŕňa prepravu, čakanie vodiča pri prílete (meet & greet), palivo, diaľničné poplatky a detské sedačky ak sú potrebné. Cena je fixná bez ohľadu na počet cestujúcich a batožiny do maximálnej kapacity vozidla.",
+        },
+        {
+          q: "Ako prebieha meet & greet služba?",
+          a: "Pri prílete na letisko vás náš vodič očakáva v príletovej hale s menovkou s vaším menom. Sledujeme čas príletu lietadla, takže aj pri meškaní vás vodič počká.",
+        },
+        {
+          q: "Sú k dispozícii detské sedačky?",
+          a: "Áno, detské sedačky poskytujeme bezplatne na požiadanie. Prosím uveďte vek a počet detí pri rezervácii, aby sme pripravili vhodné sedačky.",
+        },
+        {
+          q: "Koľko batožiny môžem vziať so sebou?",
+          a: "Štandardne môžete prepravovať batožinu pre 3-4 osoby (kufor + príručná batožina na osobu). Pre väčšie množstvo batožiny nás kontaktujte vopred a prispôsobíme vozidlo.",
+        },
+        {
+          q: "Aké sú podmienky stornovania?",
+          a: "Rezerváciu môžete zrušiť bezplatne až do 24 hodín pred plánovaným transferom. Pri storovaní v kratšom čase si vyhradzujeme právo účtovať storno poplatok.",
+        },
+        {
+          q: "Ako dlho vopred mám rezervovať transfer?",
+          a: "Odporúčame rezervovať aspoň 24 hodín vopred. V prípade naliehavej potreby nás kontaktujte telefonicky - pokúsime sa vyhovieť aj krátkodobým požiadavkám.",
+        },
+      ],
     },
     cta: {
       title: "Pripravení na váš ďalší transfer?",
@@ -165,6 +204,44 @@ const translations = {
         duration: "4-4.5 hrs",
       },
       viewAll: "View All Routes",
+    },
+    faq: {
+      title: "Frequently Asked Questions",
+      subtitle: "Answers to the most common questions about our services",
+      items: [
+        {
+          q: "How can I book a transfer?",
+          a: "You can book a transfer by phone at +421 902 266 044, by email at info@letiskokosice.taxi, or via the booking form on this page. We will send you a confirmation after receiving your reservation.",
+        },
+        {
+          q: "What are the payment options?",
+          a: "You can pay in cash or by card directly in the vehicle. For corporate clients, we offer invoice payment for bulk orders.",
+        },
+        {
+          q: "What does the transfer price include?",
+          a: "The price includes transportation, driver waiting at arrival (meet & greet), fuel, toll fees, and child seats if needed. The price is fixed regardless of the number of passengers and luggage up to the maximum vehicle capacity.",
+        },
+        {
+          q: "How does the meet & greet service work?",
+          a: "Upon arrival at the airport, our driver will be waiting for you in the arrivals hall with a name sign. We track flight arrival times, so even if delayed, the driver will wait.",
+        },
+        {
+          q: "Are child seats available?",
+          a: "Yes, we provide child seats free of charge upon request. Please specify the age and number of children when booking so we can prepare appropriate seats.",
+        },
+        {
+          q: "How much luggage can I bring?",
+          a: "Typically, you can transport luggage for 3-4 people (suitcase + hand luggage per person). For larger amounts of luggage, contact us in advance and we will arrange an appropriate vehicle.",
+        },
+        {
+          q: "What are the cancellation conditions?",
+          a: "You can cancel your reservation free of charge up to 24 hours before the planned transfer. For cancellations made within a shorter timeframe, we reserve the right to charge a cancellation fee.",
+        },
+        {
+          q: "How far in advance should I book a transfer?",
+          a: "We recommend booking at least 24 hours in advance. In case of urgent need, contact us by phone - we will try to accommodate last-minute requests.",
+        },
+      ],
     },
     cta: {
       title: "Ready for Your Next Transfer?",
@@ -545,6 +622,39 @@ export default function Home() {
                   </Button>
                 </CardContent>
               </Card>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+                {t.faq.title}
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                {t.faq.subtitle}
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="w-full space-y-4">
+                {t.faq.items.map((item, index) => (
+                  <AccordionItem 
+                    key={index} 
+                    value={`item-${index}`}
+                    className="border-2 border-border rounded-lg px-6 data-[state=open]:border-accent/50"
+                  >
+                    <AccordionTrigger className="text-left font-heading font-semibold text-lg hover:text-primary">
+                      {item.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed pt-2">
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </div>
           </div>
         </section>
