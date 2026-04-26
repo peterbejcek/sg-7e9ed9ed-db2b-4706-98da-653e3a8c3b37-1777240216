@@ -4,7 +4,7 @@ import { BookingForm } from "@/components/BookingForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Phone, Clock, CheckCircle2, Users, Baby, MapPin, ArrowRight, Star, CreditCard, FileText, Car } from "lucide-react";
+import { Phone, Clock, CheckCircle2, Users, Baby, MapPin, ArrowRight, Star, CreditCard, FileText, Car, Facebook, Instagram, Mail } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const translations = {
@@ -708,9 +708,7 @@ export default function Home() {
                     </a>
                   </div>
                   <div className="flex items-center gap-2">
-                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
+                    <Mail className="h-4 w-4" />
                     <a href="mailto:info@letiskokosice.taxi" className="hover:text-foreground transition-colors">
                       {t.footer.contact.email}
                     </a>
