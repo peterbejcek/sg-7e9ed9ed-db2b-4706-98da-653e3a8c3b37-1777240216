@@ -249,13 +249,13 @@ export default function Home() {
               </div>
               <div className="relative h-64 rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
                 <img 
-                  src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=2070" 
-                  alt="Skoda modern vehicle"
+                  src="/AAEC9922-6351-4B69-8648-F549B9D17900.png" 
+                  alt="Tesla Model 3"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <p className="text-white font-semibold">Škoda Superb</p>
-                  <p className="text-white/80 text-sm">Spacious family vehicles</p>
+                  <p className="text-white font-semibold">Tesla Model 3</p>
+                  <p className="text-white/80 text-sm">Ekologické tiché komfortne</p>
                 </div>
               </div>
             </div>
