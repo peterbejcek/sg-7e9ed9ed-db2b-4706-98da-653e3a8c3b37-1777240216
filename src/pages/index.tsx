@@ -128,7 +128,7 @@ const translations = {
       contact: {
         title: "Kontakt",
         phone: "+421 902 266 044",
-        email: "info@letiskokosice.taxi",
+        email: "letiskokosicetaxi@gmail.com",
       },
       gdpr: "Ochrana osobných údajov (GDPR)",
       partners: "Partnerské služby",
@@ -254,7 +254,7 @@ const translations = {
       contact: {
         title: "Contact",
         phone: "+421 902 266 044",
-        email: "info@letiskokosice.taxi",
+        email: "letiskokosicetaxi@gmail.com",
       },
       gdpr: "Privacy Policy (GDPR)",
       partners: "Partner Services",
@@ -336,9 +336,11 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base font-semibold">
-                  {t.hero.cta}
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base font-semibold" asChild>
+                  <a href="#booking">
+                    {t.hero.cta}
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
                 </Button>
                 <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20 backdrop-blur text-base font-semibold" asChild>
                   <a href="tel:+421902266044">
@@ -550,9 +552,11 @@ export default function Home() {
                   <CardDescription className="text-base">{t.routes.ksc.desc}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                    {t.hero.cta}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+                    <a href="#booking">
+                      {t.hero.cta}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -583,9 +587,11 @@ export default function Home() {
                   <CardDescription className="text-base">{t.routes.bud.desc}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                    {t.hero.cta}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+                    <a href="#booking">
+                      {t.hero.cta}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -616,9 +622,11 @@ export default function Home() {
                   <CardDescription className="text-base">{t.routes.krk.desc}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                    {t.hero.cta}
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+                    <a href="#booking">
+                      {t.hero.cta}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
                   </Button>
                 </CardContent>
               </Card>
@@ -672,9 +680,11 @@ export default function Home() {
               <p className="text-lg text-white/90 mb-8">
                 {t.cta.subtitle}
               </p>
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base font-semibold">
-                {t.cta.button}
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-base font-semibold" asChild>
+                <a href="#booking">
+                  {t.cta.button}
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
@@ -709,7 +719,7 @@ export default function Home() {
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="h-4 w-4" />
-                    <a href="mailto:info@letiskokosice.taxi" className="hover:text-foreground transition-colors">
+                    <a href="mailto:letiskokosicetaxi@gmail.com" className="hover:text-foreground transition-colors">
                       {t.footer.contact.email}
                     </a>
                   </div>
