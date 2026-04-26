@@ -4,7 +4,7 @@ import { BookingForm } from "@/components/BookingForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Phone, Clock, CheckCircle2, Users, Baby, MapPin, ArrowRight, Star } from "lucide-react";
+import { Phone, Clock, CheckCircle2, Users, Baby, MapPin, ArrowRight, Star, CreditCard, FileText } from "lucide-react";
 
 const translations = {
   sk: {
@@ -42,6 +42,14 @@ const translations = {
       seats: {
         title: "Detské sedačky",
         desc: "Bezplatné detské sedačky na požiadanie.",
+      },
+      card: {
+        title: "Platba kartou",
+        desc: "Pohodlne zaplatíte kartou alebo hotovosťou v každom vozidle.",
+      },
+      invoice: {
+        title: "Platba na faktúru",
+        desc: "Pre firemných zákazníkov pri hromadných objednávkach individuálna cenová ponuka.",
       },
     },
     routes: {
@@ -110,6 +118,14 @@ const translations = {
       seats: {
         title: "Child Seats",
         desc: "Free child seats available on request.",
+      },
+      card: {
+        title: "Card Payment",
+        desc: "Conveniently pay by card or cash in every vehicle.",
+      },
+      invoice: {
+        title: "Invoice Payment",
+        desc: "For corporate clients with bulk orders, individual price quotes available.",
       },
     },
     routes: {
@@ -309,7 +325,7 @@ export default function Home() {
               {t.benefits.title}
             </h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <Card className="border-2 hover:border-accent/50 transition-colors">
                 <CardHeader>
                   <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
@@ -347,6 +363,26 @@ export default function Home() {
                   </div>
                   <CardTitle className="font-heading">{t.benefits.seats.title}</CardTitle>
                   <CardDescription>{t.benefits.seats.desc}</CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card className="border-2 hover:border-accent/50 transition-colors">
+                <CardHeader>
+                  <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                    <CreditCard className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="font-heading">{t.benefits.card.title}</CardTitle>
+                  <CardDescription>{t.benefits.card.desc}</CardDescription>
+                </CardHeader>
+              </Card>
+
+              <Card className="border-2 hover:border-accent/50 transition-colors">
+                <CardHeader>
+                  <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                    <FileText className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="font-heading">{t.benefits.invoice.title}</CardTitle>
+                  <CardDescription>{t.benefits.invoice.desc}</CardDescription>
                 </CardHeader>
               </Card>
             </div>
