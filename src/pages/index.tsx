@@ -68,7 +68,7 @@ const translations = {
       rights: "Všetky práva vyhradené",
       contact: {
         title: "Kontakt",
-        phone: "+421 XXX XXX XXX",
+        phone: "+421 902 266 044",
         email: "info@letiskokosice.taxi",
       },
       gdpr: "Ochrana osobných údajov (GDPR)",
@@ -136,7 +136,7 @@ const translations = {
       rights: "All rights reserved",
       contact: {
         title: "Contact",
-        phone: "+421 XXX XXX XXX",
+        phone: "+421 902 266 044",
         email: "info@letiskokosice.taxi",
       },
       gdpr: "Privacy Policy (GDPR)",
@@ -219,9 +219,11 @@ export default function Home() {
                   {t.hero.cta}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20 backdrop-blur text-base font-semibold">
-                  <Phone className="mr-2 h-5 w-5" />
-                  {t.hero.phone}
+                <Button size="lg" variant="outline" className="bg-white/10 text-white border-white/20 hover:bg-white/20 backdrop-blur text-base font-semibold" asChild>
+                  <a href="tel:+421902266044">
+                    <Phone className="mr-2 h-5 w-5" />
+                    {t.hero.phone}
+                  </a>
                 </Button>
               </div>
             </div>
@@ -448,7 +450,7 @@ export default function Home() {
                 <div className="space-y-2 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <Phone className="h-4 w-4" />
-                    <a href="tel:+421XXXXXXXXX" className="hover:text-foreground transition-colors">
+                    <a href="tel:+421902266044" className="hover:text-foreground transition-colors">
                       {t.footer.contact.phone}
                     </a>
                   </div>
