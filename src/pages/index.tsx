@@ -4,7 +4,7 @@ import { BookingForm } from "@/components/BookingForm";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Phone, Clock, CheckCircle2, Users, Baby, MapPin, ArrowRight, Star, CreditCard, FileText } from "lucide-react";
+import { Phone, Clock, CheckCircle2, Users, Baby, MapPin, ArrowRight, Star, CreditCard, FileText, Car } from "lucide-react";
 
 const translations = {
   sk: {
@@ -51,18 +51,30 @@ const translations = {
         title: "Platba na faktúru",
         desc: "Pre firemných zákazníkov pri hromadných objednávkach individuálna cenová ponuka.",
       },
+      carprice: {
+        title: "Cena za auto",
+        desc: "Bez ohľadu na počet osôb a batožiny do max kapacity vozidla.",
+      },
     },
     routes: {
       title: "Naše hlavné trasy",
       ksc: {
         title: "Košice ↔ Letisko Košice (KSC)",
         desc: "Rýchla preprava medzi centrom mesta a letiskom",
+        price: "od 18€",
         duration: "15-20 min",
       },
       bud: {
         title: "Košice ↔ Letisko Budapešť (BUD)",
-        desc: "Transfer na letisko Budapešť už od 120€. Komfortné vozidlá a skúsení vodiči.",
+        desc: "Transfer na letisko Budapešť. Komfortné vozidlá a skúsení vodiči.",
+        price: "od 250€",
         duration: "3-3.5 hod",
+      },
+      krk: {
+        title: "Košice ↔ Letisko Krakov (KRK)",
+        desc: "Pohodlný transfer na letisko v Krakove",
+        price: "od 290€",
+        duration: "4-4.5 hod",
       },
       viewAll: "Zobraziť všetky trasy",
     },
@@ -127,18 +139,30 @@ const translations = {
         title: "Invoice Payment",
         desc: "For corporate clients with bulk orders, individual price quotes available.",
       },
+      carprice: {
+        title: "Price Per Car",
+        desc: "Regardless of number of passengers and luggage up to max vehicle capacity.",
+      },
     },
     routes: {
       title: "Our Main Routes",
       ksc: {
         title: "Kosice ↔ Kosice Airport (KSC)",
         desc: "Quick transfer between city center and airport",
+        price: "from €18",
         duration: "15-20 min",
       },
       bud: {
         title: "Kosice ↔ Budapest Airport (BUD)",
-        desc: "Transfer to Budapest Airport from €120. Comfortable vehicles and experienced drivers.",
+        desc: "Transfer to Budapest Airport. Comfortable vehicles and experienced drivers.",
+        price: "from €250",
         duration: "3-3.5 hrs",
+      },
+      krk: {
+        title: "Kosice ↔ Krakow Airport (KRK)",
+        desc: "Comfortable transfer to Krakow Airport",
+        price: "from €290",
+        duration: "4-4.5 hrs",
       },
       viewAll: "View All Routes",
     },
@@ -385,6 +409,16 @@ export default function Home() {
                   <CardDescription>{t.benefits.invoice.desc}</CardDescription>
                 </CardHeader>
               </Card>
+
+              <Card className="border-2 hover:border-accent/50 transition-colors">
+                <CardHeader>
+                  <div className="h-12 w-12 rounded-full bg-accent/10 flex items-center justify-center mb-4">
+                    <Car className="h-6 w-6 text-accent" />
+                  </div>
+                  <CardTitle className="font-heading">{t.benefits.carprice.title}</CardTitle>
+                  <CardDescription>{t.benefits.carprice.desc}</CardDescription>
+                </CardHeader>
+              </Card>
             </div>
           </div>
         </section>
@@ -396,17 +430,22 @@ export default function Home() {
               {t.routes.title}
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070" 
+                    src="https://images.unsplash.com/photo-1583886266792-87c9b7f8e25d?q=80&w=2070" 
                     alt="Kosice Airport"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 right-4">
                     <Badge variant="secondary" className="bg-white/95 text-primary backdrop-blur">
                       {t.routes.ksc.duration}
+                    </Badge>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-accent text-accent-foreground font-semibold">
+                      {t.routes.ksc.price}
                     </Badge>
                   </div>
                 </div>
@@ -428,13 +467,18 @@ export default function Home() {
               <Card className="border-2 border-secondary/20 hover:border-secondary/40 transition-all hover:shadow-lg overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074" 
-                    alt="Budapest Airport"
+                    src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?q=80&w=2069" 
+                    alt="Budapest Airport with airplane"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 right-4">
                     <Badge variant="secondary" className="bg-white/95 text-secondary backdrop-blur">
                       {t.routes.bud.duration}
+                    </Badge>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-accent text-accent-foreground font-semibold">
+                      {t.routes.bud.price}
                     </Badge>
                   </div>
                 </div>
@@ -444,6 +488,39 @@ export default function Home() {
                   </div>
                   <CardTitle className="font-heading text-xl">{t.routes.bud.title}</CardTitle>
                   <CardDescription className="text-base">{t.routes.bud.desc}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                    {t.hero.cta}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src="https://images.unsplash.com/photo-1583918266116-1fd881281db1?q=80&w=2070" 
+                    alt="Krakow Airport"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4">
+                    <Badge variant="secondary" className="bg-white/95 text-primary backdrop-blur">
+                      {t.routes.krk.duration}
+                    </Badge>
+                  </div>
+                  <div className="absolute top-4 left-4">
+                    <Badge className="bg-accent text-accent-foreground font-semibold">
+                      {t.routes.krk.price}
+                    </Badge>
+                  </div>
+                </div>
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-2">
+                    <MapPin className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="font-heading text-xl">{t.routes.krk.title}</CardTitle>
+                  <CardDescription className="text-base">{t.routes.krk.desc}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
