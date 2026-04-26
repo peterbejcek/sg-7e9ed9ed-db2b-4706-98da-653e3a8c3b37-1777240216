@@ -180,16 +180,20 @@ export default function Home() {
               <a href="#benefits" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
                 {t.nav.benefits}
               </a>
-              <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Phone className="h-4 w-4 mr-1.5" />
-                {t.nav.contact}
+              <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+                <a href="tel:+421902266044">
+                  <Phone className="h-4 w-4 mr-1.5" />
+                  {t.nav.contact}
+                </a>
               </Button>
               <LanguageSwitch />
             </nav>
 
             <div className="md:hidden flex items-center gap-2">
-              <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                <Phone className="h-4 w-4" />
+              <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
+                <a href="tel:+421902266044">
+                  <Phone className="h-4 w-4" />
+                </a>
               </Button>
               <LanguageSwitch />
             </div>
