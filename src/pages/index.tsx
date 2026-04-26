@@ -450,8 +450,8 @@ export default function Home() {
               <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?q=80&w=2070" 
-                    alt="Kosice Airport"
+                    src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop" 
+                    alt="Kosice Airport terminal"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 right-4">
@@ -483,7 +483,7 @@ export default function Home() {
               <Card className="border-2 border-secondary/20 hover:border-secondary/40 transition-all hover:shadow-lg overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1569629743817-70d8db6c323b?q=80&w=2069" 
+                    src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?q=80&w=1600&auto=format&fit=crop" 
                     alt="Budapest Airport with airplane"
                     className="w-full h-full object-cover"
                   />
@@ -516,8 +516,8 @@ export default function Home() {
               <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1583918266116-1fd881281db1?q=80&w=2070" 
-                    alt="Krakow Airport"
+                    src="https://images.unsplash.com/photo-1529074963764-98f45c47344b?q=80&w=1600&auto=format&fit=crop" 
+                    alt="Krakow Airport terminal"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 right-4">
