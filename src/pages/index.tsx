@@ -761,7 +761,7 @@ export default function Home() {
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <div className="flex items-center gap-4">
                   <a 
-                    href="https://www.facebook.com/letiskokosice.taxi" 
+                    href="https://www.facebook.com/share/1ZCQUxaQJ8/?mibextid=wwXIfr" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
