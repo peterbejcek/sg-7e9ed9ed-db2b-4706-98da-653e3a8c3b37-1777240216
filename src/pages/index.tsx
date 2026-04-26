@@ -238,13 +238,13 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
               <div className="relative h-64 rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
                 <img 
-                  src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070" 
-                  alt="Mercedes luxury vehicle"
+                  src="/0025BE44-15A2-4EA2-BC76-4C5387C2D68A.png" 
+                  alt="VW Passat GTE"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                  <p className="text-white font-semibold">Mercedes-Benz E-Class</p>
-                  <p className="text-white/80 text-sm">Premium comfort vehicles</p>
+                  <p className="text-white font-semibold">VW Passat GTE</p>
+                  <p className="text-white/80 text-sm">Komfortné, pohodlné a tiché</p>
                 </div>
               </div>
               <div className="relative h-64 rounded-xl overflow-hidden shadow-2xl border-4 border-white/20">
