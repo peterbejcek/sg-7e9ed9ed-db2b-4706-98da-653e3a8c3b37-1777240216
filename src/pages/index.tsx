@@ -746,12 +746,40 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Social Media & Legal Links */}
+            <div className="py-6 border-t border-border">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div className="flex items-center gap-4">
+                  <a 
+                    href="https://www.facebook.com/letiskokosice.taxi" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="h-5 w-5 text-primary" />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/letiskokosice.taxi" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="h-5 w-5 text-primary" />
+                  </a>
+                </div>
+                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                  <a href="#gdpr" className="hover:text-foreground transition-colors">
+                    {t.footer.gdpr}
+                  </a>
+                </div>
+              </div>
+            </div>
+
             {/* Bottom Bar */}
             <div className="pt-6 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
               <p>© 2026 letiskokosice.taxi. {t.footer.rights}.</p>
-              <a href="#gdpr" className="hover:text-foreground transition-colors">
-                {t.footer.gdpr}
-              </a>
             </div>
           </div>
         </footer>
