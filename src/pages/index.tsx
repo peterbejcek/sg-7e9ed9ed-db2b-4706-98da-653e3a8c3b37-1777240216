@@ -294,12 +294,15 @@ export default function Home() {
               <a href="#routes" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
                 {t.nav.routes}
               </a>
+              <a href="tel:+421902266044" className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+                <Phone className="h-4 w-4" />
+                +421 902 266 044
+              </a>
               <a href="#benefits" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
                 {t.nav.benefits}
               </a>
               <Button size="sm" className="bg-accent text-accent-foreground hover:bg-accent/90" asChild>
-                <a href="tel:+421902266044">
-                  <Phone className="h-4 w-4 mr-1.5" />
+                <a href="#booking">
                   {t.nav.contact}
                 </a>
               </Button>
