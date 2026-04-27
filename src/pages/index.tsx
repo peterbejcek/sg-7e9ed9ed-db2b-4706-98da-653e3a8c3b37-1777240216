@@ -287,16 +287,17 @@ export default function Home() {
               </div>
             </div>
 
+            <a href="tel:+421902266044" className="hidden lg:flex items-center gap-2 text-base font-semibold text-primary hover:text-primary/80 transition-colors">
+              <Phone className="h-5 w-5" />
+              +421 902 266 044
+            </a>
+
             <nav className="hidden md:flex items-center gap-6">
               <a href="#services" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
                 {t.nav.services}
               </a>
               <a href="#routes" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
                 {t.nav.routes}
-              </a>
-              <a href="tel:+421902266044" className="flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
-                <Phone className="h-4 w-4" />
-                +421 902 266 044
               </a>
               <a href="#benefits" className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors">
                 {t.nav.benefits}
