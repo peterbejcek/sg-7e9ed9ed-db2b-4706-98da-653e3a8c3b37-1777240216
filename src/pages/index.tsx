@@ -529,8 +529,8 @@ export default function Home() {
               <Card className="border-2 border-primary/20 hover:border-primary/40 transition-all hover:shadow-lg overflow-hidden">
                 <div className="relative h-48 overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop" 
-                    alt="Kosice Airport terminal"
+                    src="/IMG_1271.png" 
+                    alt="Košice Airport terminal"
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute top-4 right-4">
